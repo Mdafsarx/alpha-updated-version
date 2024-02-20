@@ -44,11 +44,6 @@ function removeBg(id){
 
 
 
-
-
-
-
-
 function startGame(){
     
 
@@ -72,18 +67,24 @@ return RandomAlphabet
 
 
 }
+const audio=new Audio();
+const success='success.mp3'
+const error='error2.mp3';
 
 
+let isGameOn=false;
 
 document.addEventListener('keyup',(event)=>{
-
-
+    if(isGameOn===false){return}
     if(event.key===getInnerText('Display').toLowerCase())
     { startGame()
 removeBg(event.key)
 const score=parseInt(getInnerText('score'));
 const UpdatedScore=score+1;
-setInnerText('score',UpdatedScore)  }
+setInnerText('score',UpdatedScore); 
+audio.src=success;
+audio.play()
+}
 
 else{
 
@@ -94,11 +95,22 @@ else{
         HideElementById('Playground')
         showElementById('End')
         setInnerText('EndScore',parseInt(getInnerText('score')))
+        isGameOn=false;
 }
-    setInnerText('Life',updatedLife);
+const opacityParcent=(updatedLife/5)*100;
+console.log(opacityParcent)
+
+getId('artboard').style.background=(`linear-gradient(#ffffffB3 ${opacityParcent}%,red)`)
+
+audio.src=error;
+audio.play()
+
+setInnerText('Life',updatedLife);
 
 
 }
 });
+
+
 
 
