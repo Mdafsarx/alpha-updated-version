@@ -7,17 +7,110 @@
 <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
 <script src="https://cdn.tailwindcss.com"></script>
 
+<style>
+    body{
+        @media screen and (max-width:700px){
+            background-size: contain;
+        }
+    }
+</style>
+
 </head>
-<body>
+<body class="bg-[#1E1E1E] min-h-screen bg-[url(./images/background.png)] bg-center bg-no-repeat">
     
-<header>
+<header class="flex justify-center items-center min-h-screen text-center" id="Home">
+
+<div class="text-white space-y-3">
+    <h1 class="text-4xl lg:text-8xl font-extrabold ">ALPHABET CLASH</h1>
+    <p class="text-lg font-medium text-pretty">Unleash Your Keyboard Kung Fu : Press “Enter” to Play</p>
+    <button class="btn text-base font-bold" id="PlayNow">Play Now</button>
+</div>
 
 </header>
 
 
 
 
-<main>
+<main class="">
+
+<!-- play ground -->
+<div class="hidden" id="Playground">
+
+<div class="flex justify-center py-10">
+    <div class="w-[80%] h-[40vh] artboard-horizontal phone-6 border-8 border-[#010313CC] bg-[#ffffffB3] ">
+
+            <div class="flex justify-center">
+                <h1 class="font-medium text-white bg-[#2F2941] px-5 py-1 rounded-b-xl">Don't watch keyboard  while playing...</h1>
+            </div>
+    
+    <h1 class="text-9xl font-bold flex justify-center items-center h-full" id="Display">Y</h1>
+
+    </div>
+</div>
+   
+
+
+  <div>
+
+    <div class="flex justify-center space-x-[1px]  my-1 w-full">
+        <kbd id="q" class="kbd">q</kbd>
+        <kbd id="w" class="kbd">w</kbd>
+        <kbd id="e" class="kbd">e</kbd>
+        <kbd id="r" class="kbd">r</kbd>
+        <kbd id="t" class="kbd">t</kbd>
+        <kbd id="y" class="kbd">y</kbd>
+        <kbd id="u" class="kbd">u</kbd>
+        <kbd id="i" class="kbd">i</kbd>
+        <kbd id="o" class="kbd">o</kbd>
+        <kbd id="p" class="kbd">p</kbd>
+      </div> 
+      <div class="flex justify-center gap-1 my-1 w-full">
+        <kbd id="a" class="kbd">a</kbd>
+        <kbd id="s" class="kbd">s</kbd>
+        <kbd id="d" class="kbd">d</kbd>
+        <kbd id="f" class="kbd">f</kbd>
+        <kbd id="g" class="kbd">g</kbd>
+        <kbd id="h" class="kbd">h</kbd>
+        <kbd id="j" class="kbd">j</kbd>
+        <kbd id="k" class="kbd">k</kbd>
+        <kbd id="l" class="kbd">l</kbd>
+      </div> 
+      <div class="flex justify-center gap-1 my-1 w-full">
+        <kbd id="z" class="kbd">z</kbd>
+        <kbd id="x" class="kbd">x</kbd>
+        <kbd id="c" class="kbd">c</kbd>
+        <kbd id="v" class="kbd">v</kbd>
+        <kbd id="b" class="kbd">b</kbd>
+        <kbd id="n" class="kbd">n</kbd>
+        <kbd id="m" class="kbd">m</kbd>
+        <kbd id="/" class="kbd">/</kbd>
+      </div>
+
+  </div>
+
+
+<div class="flex justify-between px-14 pt-10">
+
+<button class="btn bg-[#894189] flex items-center border-0 text-white rounded-full">Life <img src="Group 23 (2).png" alt=""><span id="Life">5</span></button>
+
+    <button class="btn flex items-center bg-[#360490] rounded-full text-white border-0">Score<img src="monetization_on (1).png" alt=""><span id="score">0</span></button>
+
+</div>
+
+</div>
+
+
+<!-- score -->
+<div class="flex justify-center text-center items-center min-h-screen hidden" id="End">
+
+<div class="text-white bg-[#FFFFFF33] space-y-3 p-4 px-8 rounded-xl ">
+    <h2 class="text-5xl"><span class="font-bold">Score :</span> <span id="EndScore">0</span></h2>
+    <button class="btn font-bold text-black text-xl" onclick="PlayAgain()">Play Again</button>
+    <p>Practice will make you Pro</p>
+</div>
+
+</div>
+
 
 </main>
 
@@ -32,7 +125,7 @@
 
 
 
-
-
+<script src="function.js"></script>
+<script src="config.js"></script>
 </body>
 </html>
